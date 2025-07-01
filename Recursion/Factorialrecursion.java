@@ -1,3 +1,5 @@
+package Recursion;
+
 public class Factorialrecursion {
     public static void main(String args[]) {
         int n = 5;
