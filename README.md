@@ -24,3 +24,4 @@ Selection Sort -> Select Minimum and Swap
 Bubble Sort -> compare neighbours and swap
 Insertion Sort -> compare all and place the min
 Merge Sort -> Divide and Merge
+Quick Sort -> Divide and conquer 
