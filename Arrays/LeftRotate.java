@@ -2,6 +2,7 @@ package Arrays;
 
 import java.util.Arrays;
 
+// right rotation= arraylength -left rotation
 public class LeftRotate {
     public static void main(String[] args) {
         int arr[] = { 1, 2, 3, 4, 5 };
