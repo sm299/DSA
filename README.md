@@ -19,6 +19,7 @@ O(n)	Linear	Loop through an array
 O(n log n)	Log-linear	Efficient sorting algorithms (Merge Sort)
 O(n²)	Quadratic	Nested loops (e.g., Bubble Sort)
 O(2ⁿ)	Exponential	Recursive Fibonacci
+Arrays-> Max size in main method 10^6, globally 10^7
 Hashing -> Prestoring + fetching
 Selection Sort -> Select Minimum and Swap
 Bubble Sort -> compare neighbours and swap
