@@ -2,7 +2,13 @@ package Arrays;
 
 import java.util.Arrays;
 
-// right rotation= arraylength -left rotation
+/* 
+ * right rotation= arraylength -left rotation
+ * or, go for 
+ * reverse(arr,0,arr.length-1);
+ * reverse(arr,0,k-1);
+ * reverse(arr,k,arr.length-1);
+ */
 public class LeftRotate {
     public static void main(String[] args) {
         int arr[] = { 1, 2, 3, 4, 5 };
