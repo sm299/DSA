@@ -28,7 +28,7 @@ public class MergeSort {
         int left = low;
         int right = mid + 1;
         List<Integer> arrTemp = new ArrayList<>();
-        int count = 0;
+        // int count = 0;
         while (left <= mid && right <= high) {
             if (arr[left] <= arr[right]) {
                 arrTemp.add(arr[left]);
@@ -42,7 +42,7 @@ public class MergeSort {
         }
         while (left <= mid) {
             arrTemp.add(arr[left]);
-            count++;
+            // count++;
             left++;
         }
         while (right <= high) {
