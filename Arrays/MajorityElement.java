@@ -35,7 +35,7 @@ public class MajorityElement {
                 count = 1;
             } else if (nums[i] == element) {
                 count++;
-            } else if (nums[i] == element) {
+            } else if (nums[i] != element) {
                 count--;
             }
         }
