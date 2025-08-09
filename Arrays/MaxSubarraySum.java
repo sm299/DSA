@@ -6,6 +6,7 @@ public class MaxSubarraySum {
 
         maxSubBF(nums);
         maxSubBA(nums);
+        maxSubOAOnlyPossitive(nums);
         maxSubOA(nums);// Kadane's Algo
     }
 
@@ -38,7 +39,7 @@ public class MaxSubarraySum {
         System.out.println("BA : " + tempSum);
     }
 
-    public static void maxSubOA(int[] nums) {
+    public static void maxSubOAOnlyPossitive(int[] nums) {
         int tempSum = Integer.MIN_VALUE;
         int sum = 0;
         for (int num : nums) {
@@ -46,6 +47,16 @@ public class MaxSubarraySum {
             if (sum < 0) {
                 sum = 0;
             }
+            tempSum = Math.max(sum, tempSum);
+        }
+        System.out.println("OA only Positive : " + tempSum);
+    }
+
+    public static void maxSubOA(int[] nums) {
+        int tempSum = Integer.MIN_VALUE;
+        int sum = 0;
+        for (int num : nums) {
+            sum = Math.max(num, sum + num);
             tempSum = Math.max(sum, tempSum);
         }
         System.out.println("OA : " + tempSum);
