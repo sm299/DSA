@@ -11,10 +11,10 @@ public class RearrangeElements {
         int arr[] = { 3, -1, -2, -5, 2, 4 };
         rearrange(arr);
         System.out.println();
-        rearrBF(arr);// TC->O(n)+O(n); SC->O(n)
+        rearrBF(arr);// TC->O(n)+O(n/2); SC->O(n)
         System.out.println();
         int arr1[] = { 3, -1, -2, -5, 2, 4 };
-        rearrOA(arr1);
+        rearrOA(arr1);// TC->O(n); SC->O(n)
 
     }
 
