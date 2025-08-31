@@ -94,11 +94,9 @@ public class ReverseLL {
     }
 
     public static Node reverseRecursion(Node head) {
-        // Base case: empty list or single node
         if (head == null || head.next == null) {
             return head;
         }
-
         Node newHead = reverseRecursion(head.next);
 
         head.next.next = head;
