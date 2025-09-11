@@ -1,7 +1,7 @@
 package LinkedList;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 class Node {
     int data;
@@ -18,13 +18,13 @@ class Node {
     }
 }
 
-public class IfCirClePresent {
+public class LengthOfCircle {
     public static void main(String[] args) {
         int[] arr = { 3, 2, 4, 5, 6 };
         // int[] arr2 = { 1, 2, 3, 4, 5, 6 };
         Node head = insert(arr);
-        isCircularBF(head);
-        isCircularOA(head);
+        locBF(head);
+        locOA(head);
     }
 
     public static Node insert(int[] arr) {
@@ -44,39 +44,47 @@ public class IfCirClePresent {
         return head;
     }
 
-    public static void isCircularBF(Node head) {
-        List<Node> list = new ArrayList<>();
+    public static void locBF(Node head) {
+        if (head == null || head.next == null) {
+            System.out.println("No Node or Single node is Present");
+        }
+        Map<Node, Integer> map = new HashMap<>();
         Node temp = head;
-        boolean isCircular = false;
+        int count = 0;
         while (temp != null) {
-            if (list.contains(temp)) {
-                System.out.println();
-                System.out.println("Cycle starts at : " + temp.data);
-                isCircular = true;
+            count++;
+            if (map.containsKey(temp)) {
+                System.out.println("Length : " + (count - map.get(temp)));
                 break;
             }
-            System.out.print(temp.data + " ");
-            list.add(temp);
+            map.put(temp, count);
             temp = temp.next;
         }
-
-        System.out.println("List if Circular : " + isCircular);
     }
 
-    public static void isCircularOA(Node head) {
+    public static void locOA(Node head) {
+        if (head == null || head.next == null) {
+            System.out.println("No Node or Single node is Present");
+        }
+        // Map<Node, Integer> map = new HashMap<>();
         Node slow = head;
         Node fast = head;
-        boolean isCircular = false;
+        int count = 1;
         while (fast != null && fast.next != null) {
-            slow = slow.next;
+            // count++;
             fast = fast.next.next;
+            slow = slow.next;
             if (fast == slow) {
-                isCircular = true;
+                fast = fast.next;
+                while (fast != slow) {
+                    count++;
+                    fast = fast.next;
+                }
+                System.out.println("Length :: " + count);
                 break;
             }
 
         }
-        System.out.println("List is Circular Tortoise & Hare : " + isCircular);
     }
 
 }

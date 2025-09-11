@@ -18,13 +18,13 @@ class Node {
     }
 }
 
-public class IfCirClePresent {
+public class StartingPoint {
     public static void main(String[] args) {
         int[] arr = { 3, 2, 4, 5, 6 };
         // int[] arr2 = { 1, 2, 3, 4, 5, 6 };
         Node head = insert(arr);
-        isCircularBF(head);
-        isCircularOA(head);
+        spBF(head);
+        spOA(head);
     }
 
     public static Node insert(int[] arr) {
@@ -44,7 +44,7 @@ public class IfCirClePresent {
         return head;
     }
 
-    public static void isCircularBF(Node head) {
+    public static void spBF(Node head) {
         List<Node> list = new ArrayList<>();
         Node temp = head;
         boolean isCircular = false;
@@ -63,7 +63,7 @@ public class IfCirClePresent {
         System.out.println("List if Circular : " + isCircular);
     }
 
-    public static void isCircularOA(Node head) {
+    public static void spOA(Node head) {
         Node slow = head;
         Node fast = head;
         boolean isCircular = false;
@@ -71,12 +71,17 @@ public class IfCirClePresent {
             slow = slow.next;
             fast = fast.next.next;
             if (fast == slow) {
+                slow = head;
+                while (slow != fast) {
+                    fast = fast.next;
+                    slow = slow.next;
+                }
+                System.out.println("Starting point : " + slow.data);
                 isCircular = true;
                 break;
             }
 
         }
-        System.out.println("List is Circular Tortoise & Hare : " + isCircular);
+        System.out.println();
     }
-
 }
