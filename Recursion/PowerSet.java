@@ -3,6 +3,8 @@ package Recursion;
 import java.util.ArrayList;
 import java.util.List;
 
+//tc-> O(2^n*n) sc->O(1)
+
 public class PowerSet {
     public static void main(String[] args) {
         String str = "abc";
