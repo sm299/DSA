@@ -21,5 +21,5 @@ public class XorTillN {
     
     //if you want to go for xor from l to r
     //then xor from 1->(l-1) and then 1->r and then xor those two , 
-    //        as N xor N is 0, they will end up having xor frpm l to r
+    // as N xor N is 0, they will end up having xor from l to r
 }
