@@ -40,16 +40,14 @@ public class LongestConsequtive {
             if (!set.contains(num - 1)) {
                 int count = 1;
                 int curr = num;
-                while (set.contains(num + 1)) {
+                while (set.contains(curr + 1)) {
                     count++;
-                    curr = curr++;
+                    curr++;
                 }
                 finalSize = Math.max(count, finalSize);
             }
 
         }
         System.out.println(finalSize);
-    
-
     }
 }
